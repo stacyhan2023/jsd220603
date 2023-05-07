@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+<div id="app">
+  <!--  //弄按钮和输入框-->
+  <input type="text" placeholder="姓名" v-model="emp.name">
+  <input type="text" placeholder="工资" v-model="emp.salary">
+  <input type="text" placeholder="工作" v-model="emp.job">
+  <input type="button" value="添加" @click="insert()">
+  <!--  //弄表格填入内容-->
+  <template>
+    <h1>员工列表</h1>
+    <el-table
+            :data="empArr"
+            style="width: 100%" border="true">
+      <el-table-column
+              type="index"
+              label="编号"
+              width="180">
+      </el-table-column>
+      <el-table-column
+              prop="name"
+              label="姓名"
+              width="180">
+      </el-table-column>
+      <el-table-column
+              prop="salary"
+              label="工资"
+              width="180">
+      </el-table-column>
+      <el-table-column
+              prop="job"
+              label="工作"
+              width="180">
+      </el-table-column>
+      <!--***********************-->
+      <el-table-column label="操作" >
+        <template slot-scope="scope">
+          <el-button
+                  size="mini"
+                  type="danger"
+                  @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+  </template>
+
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  let v=new Vue({
+    el: '#app',
+    data: function() {
+      return {
+        emp:{
+          name:"",
+          salary:"",
+          job:""
+        },
+        empArr:[
+          {name:"stacy",salary:600,job:"engineer"},
+          {name:"jane",salary:700,job:"salesman"},
+          {name:"tom",salary:800,job:"teacher"}
+        ]
+      }
+    },
+    methods:{
+      handleDelete(i,emp){
+        v.empArr.splice(i,1);//删除数组中的一个数据
+      },
+      insert(){
+        v.empArr.push({name: v.emp.name, salary: v.emp.salary, job: v.emp.job})
+      }
+
+    }
+  })
+</script>
+</html>
+
+
