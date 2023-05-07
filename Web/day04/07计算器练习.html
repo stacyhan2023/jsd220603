@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<input type="text" id="i1">
+<input type="text" id="i2">
+<input type="button" value="加" onclick="f1()">
+<input type="button" value="减" onclick="f2()">
+<input type="button" value="乘" onclick="f3()">
+<input type="button" value="除" onclick="f4()">
+<div>结果：</div>
+</div>
+
+
+
+<script>
+    let v1=document.querySelector("#i1");
+    let v2=document.querySelector("#i2");
+    let d=document.querySelector("div");
+    /*把文本框取出值付给div*/
+
+  /*得到div和文本框*/
+  function f1() {
+      if(isNaN(v1.value)||isNaN(v2.value)){
+          d.innerText="输入错误！！";
+          return;
+      }
+      d.innerText="结果："+(parseFloat(v1.value)+parseFloat(v2.value));
+  }
+
+  function f2() {
+      if(isNaN(v1.value)||isNaN(v2.value)){
+          d.innerText="输入错误！！";
+          return;
+      }
+      d.innerText="结果："+(v1.value-v2.value);
+  }
+    function f3() {
+        if(isNaN(v1.value)||isNaN(v2.value)){
+            d.innerText="输入错误！！";
+            return;
+        }
+        d.innerText="结果："+v1.value*v2.value;
+    }
+    function f4() {
+        if(isNaN(v1.value)||isNaN(v2.value)){
+            d.innerText="输入错误！！";
+            return;
+        }
+        d.innerText="结果："+v1.value/v2.value;
+    }
+
+</script>
+</body>
+</html>

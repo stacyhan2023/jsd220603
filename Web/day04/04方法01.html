@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--通过按钮调用方法-->
+<script>
+  /*1 无参无返回值方法*/
+  /*调用方法*/
+  function f1() {
+    console.log("f1");
+  }
+  f1();
+  /*2 有参无返回值方法*/
+function f2(name,age) {
+  console.log(name+":"+age);
+}
+ f2("stacy",18)
+  /*3 无参有返回值*/
+function f3() {
+  return "这是返回值";
+}
+let info=f3()
+console.log(info)
+  /*4 有参有返回值*/
+function f4(x,y) {
+  return x*y;
+}
+let z=f4(2,3);
+console.log(z)
+  /*第二种定义方法的方式*/
+let f5=function (name,age) {
+  console.log(name+":"+age)
+}
+f5("jane",18)
+  /*i第三种定义方法的方式*/
+  let f6=new Function("name","age","console.log(name+':'+age)");
+f6("王武",12)
+</script>
+
+</body>
+</html>

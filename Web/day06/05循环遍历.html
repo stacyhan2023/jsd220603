@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<ul>
+    <!--v-for循环遍历-->
+    <li v-for="name in arr">{{name}}</li>
+<!--    <li v-for="name in arr" v-text="name"></li>-->
+</ul>
+
+    <table border="1">
+        <caption>任务列表</caption>
+        <tr>
+            <th>编号</th>
+            <th>名字</th>
+            <th>年龄</th>
+            <th>类型</th>
+        </tr>
+        <tr v-for="(p,i) in persons">
+            <td>{{i+1}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.age}}</td>
+            <td>{{p.type}}</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <caption>员工列表</caption>
+        <tr>
+            <th>no.</th>
+            <th>name</th>
+            <th>job</th>
+            <th>salary</th>
+            <th>age</th>
+        </tr>
+        <tr v-for="(emp,i) in empArr">
+            <td>{{i+1}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.job}}</td>
+            <td>{{emp.salary}}</td>
+            <td>{{emp.age}}</td>
+        </tr>
+    </table>
+</div>
+
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script>
+    let v = new Vue({
+        el: "body>div",
+        data: {
+            arr:["stacy","jane","tom"],
+            persons:[{name:"zs",age:500,type:"salaryMan"},
+                {name:"ls",age:300,type:"cooker"},
+                {name:"ww",age:200,type:"teacher"}],
+            empArr:[{name:"stacy",job:"sales",salary:5000,age:30},
+                {name:"jane",job:"hr",salary:3000,age:20},
+                {name:"stacy",job:"account",salary:6000,age:33},
+                {name:"stacy",job:"engineer",salary:12000,age:34},]
+        }
+    })
+</script>
+
+</body>
+</html>

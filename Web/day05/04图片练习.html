@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--要实现：输入3次点击帅哥按钮就添加3张帅哥图片，同理点击美女就添加美女-->
+<!--<input type="text" placeholder="请输入添加图片的数量">-->
+<!--<input type="button" value="帅哥" onclick="f1()">-->
+<!--<input id="female" type="button" value="美女" onclick="f2()">-->
+<input type="text" placeholder="请输入添加图片的数量" id="i1">
+<input type="button" value="帅哥" onclick="f(1)">
+<input type="button" value="美女" onclick="f(2)">
+<hr>
+<script>
+function f(x) {
+    let imgName= x==1?"../imgs/a.jpg":"../imgs/b.jpg";
+    /*得到文本框*/
+    let i1=document.querySelector("#i1");
+    for (let i = 0; i < i1.value; i++) {
+        /*创建图片标签*/
+        let img=document.createElement("img");
+        img.src=imgName;
+        img.width=100;/*设置宽度*/
+        //添加到body里面
+        document.body.append(img);
+    }
+}
+// function f1() {
+//   //通过选择器得到文本框对象
+//     let i=document.querySelector("input");
+//   //创建h1
+//     let h1=i.value;
+//
+//   //创建图片标签
+//     for( let x=0;x<h1;x++){
+//     let img=document.createElement("img");
+//     img.src ="../imgs/a.jpg";
+//     document.body.append(img);
+//     }
+//
+// }
+//
+// function f2() {
+//     //通过选择器得到文本框对象
+//     let i=document.querySelector("female");
+//     //创建h1
+//     let h1=i.value;
+//     //创建图片标签
+//     for( let x=0;x<h1;x++){
+//         let img=document.createElement("img");
+//         img.src ="../imgs/b.jpg";
+//         document.body.append(img);
+//     }
+//
+// }
+
+</script>
+</body>
+</html>

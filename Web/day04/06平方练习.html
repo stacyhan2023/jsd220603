@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<input type="button" value="平方" onclick="f()">
+<div>结果：</div>
+
+<script>
+    /*得到div和文本框*/
+    /*把文本框取出值付给div*/
+    function f() {
+        let d=document.querySelector("div");
+        let i=document.querySelector("input");
+        /*判断用户输入的内容是否为数值*/
+        if(isNaN(i.value)){
+            d.innerText="输入错误";
+            return
+        }
+
+       // d.innerText="结果："+i.value*i.value;
+        /*当变量进行-* /运算时会自动将变量转为数值*/
+        /*加法解决方案1*/
+        // d.innerText="结果："+(i.value*1+i.value*1);
+        /*加法解决方案2*/
+        d.innerText="结果："+(parseFloat(i.value)+parseFloat(i.value));
+    }
+</script>
+
+</body>
+</html>
