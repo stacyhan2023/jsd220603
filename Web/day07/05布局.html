@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- import CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <style>
+    .c1{
+      border: 1px solid red;border-radius: 5px;
+      height:50px;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+<el-row><!--行-->
+  <el-col span="12">
+    <!--列-->
+    <div class="c1">aaa</div>
+  </el-col>
+  <el-col span="12">
+    <div class="c1">bbb</div>
+  </el-col>
+</el-row>
+
+  <el-row gutter="20">
+    <el-col span="8">
+      <div class="c1">aaa</div>
+    </el-col>
+    <el-col span="8">
+      <div class="c1">bbb</div>
+    </el-col>
+      <el-col span="8">
+        <div class="c1">ccc</div>
+    </el-col>
+  </el-row>
+  <div style="width: 1200px;margin: 0 auto">
+    <el-row>
+      <el-col span="12">
+        <div class="c1">aaa</div>
+      </el-col>
+      <el-col span="12">
+        <div class="c1">bbb</div>
+      </el-col>
+    </el-row>
+  </div>
+  <!--1 四等份并居中-->
+<div style="width: 1200px;margin: 0 auto">
+  <el-row >
+    <el-col span="6">
+      <div class="c1">aaa</div>
+    </el-col>
+    <el-col span="6">
+      <div class="c1">bbb</div>
+    </el-col>
+    <el-col span="6">
+      <div class="c1">ccc</div>
+    </el-col>
+    <el-col span="6">
+      <div class="c1">ddd</div>
+    </el-col>
+  </el-row>
+</div>
+  <!--划分3部分，比例为1:2:3 间隔为30个像素 并且居中-->
+  <div style="width: 1200px;margin: 0 auto">
+    <el-row gutter="30">
+      <el-col span="4">
+        <div class="c1">aaa</div>
+      </el-col>
+      <el-col span="8">
+        <div class="c1">bbb</div>
+      </el-col>
+      <el-col span="12">
+        <div class="c1">ccc</div>
+      </el-col>
+    </el-row>
+  </div>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script>
+  let v=new Vue({
+    el: '#app',
+    data: function() {
+      return {
+
+      }
+    },
+    methods:{
+
+    }
+  })
+</script>
+</html>
+
+
